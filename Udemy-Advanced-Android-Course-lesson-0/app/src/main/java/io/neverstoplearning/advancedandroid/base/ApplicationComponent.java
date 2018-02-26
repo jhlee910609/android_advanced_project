@@ -10,7 +10,7 @@ import dagger.Component;
  * Created by JunHee on 2018. 2. 25..
  */
 @Singleton
-@Component(modules = ApplicaitonModule.class)
+@Component(modules = {ApplicaitonModule.class, ActivityBindingModule.class})
 public interface ApplicationComponent {
 
     void inject(MyApplication myApplication);

@@ -4,6 +4,8 @@ import android.app.Application;
 
 import javax.inject.Inject;
 
+import io.neverstoplearning.advancedandroid.di.ActivityInjector;
+
 /**
  * Created by JunHee on 2018. 2. 25..
  */
@@ -11,7 +13,9 @@ import javax.inject.Inject;
 public class MyApplication extends Application {
 
     @Inject
-    ApplicationComponent component;
+    ActivityInjector activityInjector;
+
+    private ApplicationComponent component;
 
     @Override
     public void onCreate() {
@@ -23,5 +27,9 @@ public class MyApplication extends Application {
 
         component.inject(this);
 
+    }
+
+    public ActivityInjector getActivityInjector() {
+        return activityInjector;
     }
 }
